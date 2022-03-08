@@ -37,15 +37,15 @@ for (let index = 0; index < fruits.length; index++) {
     newArray.push(element + "++");
 }
 
-console.log("original", fruits);
+//console.log("original", fruits);
 
-console.log("nuevo", newArray);
+//console.log("nuevo", newArray);
 
 //con el metodo map
 
 const newArray2 = fruits.map(item => item + "++");
 
-console.log("nuevo 2", newArray2);
+//console.log("nuevo 2", newArray2);
 
 //El metodo map en un array de objetos
 
@@ -72,9 +72,9 @@ const orders = [
     }
 ]
 
-console.log("original", orders);
+//console.log("original", orders);
 const totales = orders.map(item => item.Total);
-console.log("totales", totales);
+//console.log("totales", totales);
 
 //Que pasa si quiero agregar el item tax a mi nuevo array, sin modificar el array original
 
@@ -97,5 +97,29 @@ const rta3 = orders.map(item => {
 }); //De esta forma, utilizando el script operation, no copiamos la referencia en memoria
 //y el array original permanece igual
 
-console.log("original", orders);
-console.log("rta3", rta3);
+//console.log("original", orders);
+//console.log("rta3", rta3);
+
+//Filter: Filtra el array original en base a una condicion, los que la cumplan estaran
+//en el nuevo array creado. Es INMUTABLE.
+
+const words = ["pets", "cat", "dog", "sister", "flowers"];
+
+//Filtro con for
+
+const newWords = [];
+
+for (let index = 0; index < words.length; index++) {
+    const element = words[index];
+    if (element.length >= 4) {
+        newWords.push(element);
+    }
+}
+
+console.log("array original", words);
+console.log("nuevo array", newWords);
+
+//con el metodo filter
+
+const newWords2 = words.filter(element => element.length >= 4);
+console.log("words 2", newWords2);
