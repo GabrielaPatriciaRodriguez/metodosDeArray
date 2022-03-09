@@ -69,6 +69,16 @@ const orders = [
         name: "Maiten Rossi",
         Total: 5600,
         delivered: false, 
+    },
+    {
+        name: "Maximiliano Ayit",
+        Total: 3200,
+        delivered: false, 
+    },
+    {
+        name: "Maxima Servin",
+        Total: 2200,
+        delivered: false, 
     }
 ]
 
@@ -123,3 +133,19 @@ console.log("nuevo array", newWords);
 
 const newWords2 = words.filter(element => element.length >= 4);
 console.log("words 2", newWords2);
+
+//En mi array de objetos (orders), voy a filtrar las ordenes que fueron entregadas
+
+const ordenesEntregadas = orders.filter(item => item.delivered);
+
+console.log("ordenes entregadas", ordenesEntregadas);
+
+//Podemos hacer un buscador por los nombres x ej
+
+const search = (query) => {
+    return orders.filter(item => {
+        return item.name.includes(query);
+    })
+}
+
+console.log(search("Maxi"));
