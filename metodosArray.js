@@ -1,3 +1,4 @@
+//METODO FOR EACH
 //Recorriendo un array con for
 
 const letters = ["a", "b", "c", "d"];
@@ -26,7 +27,7 @@ products.forEach(obj => console.log(obj.title + " $" + obj.price))
 
 
 
-//Metodo map (transforma - es inmutable) con for:
+//METODO MAP (transforma - es inmutable) con for:
 
 const fruits = ["banana", "apple", "strawberry"];
 
@@ -110,7 +111,7 @@ const rta3 = orders.map(item => {
 //console.log("original", orders);
 //console.log("rta3", rta3);
 
-//Filter: Filtra el array original en base a una condicion, los que la cumplan estaran
+//METODO FILTER: Filtra el array original en base a una condicion, los que la cumplan estaran
 //en el nuevo array creado. Es INMUTABLE.
 
 const words = ["pets", "cat", "dog", "sister", "flowers"];
@@ -149,3 +150,21 @@ const search = (query) => {
 }
 
 console.log(search("Maxi"));
+
+//METODO REDUCE
+//Con for
+
+const totals = [1, 2, 3, 4];
+
+let suma = 0;
+
+for (let index = 0; index < totals.length; index++) {
+    const element = totals[index];
+    suma = element + suma;
+}
+
+console.log(suma);
+
+//con reduce
+const rta = totals.reduce((suma, element) => suma + element, 0);
+console.log(rta);
