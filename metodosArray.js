@@ -168,3 +168,18 @@ console.log(suma);
 //con reduce
 const rta = totals.reduce((suma, element) => suma + element, 0);
 console.log(rta);
+
+//Reduce reloaded
+
+const numbers = [1, 2, 1, 3, 3, 4, 1, 2];
+
+const respuesta = numbers.reduce((acum, item) => {
+if (!acum[item]) {
+    acum[item] = 1;
+} else {
+    acum[item] = acum[item] + 1;
+}
+return acum;
+}, {})
+
+console.log(respuesta);
