@@ -183,3 +183,45 @@ return acum;
 }, {})
 
 console.log(respuesta);
+
+//Trabajando con un array de objetos, quiero contar cuantos estan en cada level
+
+const data = [
+    {
+        name : "Patricia",
+        level: "medium"
+    },
+    {
+        name: "Juliana",
+        level: "profesional"
+    },
+    {
+        name: "Lucia",
+        level: "basic"
+    },
+    {
+        name : "Hernan",
+        level: "medium"
+    },
+    {
+        name: "Ana",
+        level: "medium"
+    },
+    {
+        name: "Julio",
+        level: "basic"
+    }
+]
+
+const niveles = data
+.map(item => item.level)
+.reduce((acum, item) => {
+    if (!acum[item]) {
+        acum[item] = 1;
+    } else {
+        acum[item] = acum[item] + 1;
+    }
+    return acum;
+    }, {});
+
+    console.log("contando cuantos hay por niveles", niveles);
