@@ -171,7 +171,7 @@ console.log(rta);
 
 //Reduce reloaded
 
-const numbers = [1, 2, 1, 3, 3, 4, 1, 2];
+const numbers = [1, 2, 4, 6, 1, 3, 3, 1];
 
 const respuesta = numbers.reduce((acum, item) => {
 if (!acum[item]) {
@@ -225,3 +225,34 @@ const niveles = data
     }, {});
 
     console.log("contando cuantos hay por niveles", niveles);
+
+
+//METODO SOME: da true o false, si encuentra o no ALGUN elemento que cumpla con la condicion
+
+//Con for
+
+let rta4 = false;
+
+for (let index = 0; index < numbers.length; index++) {
+    const element = numbers[index];
+    if (element % 2 === 0) {
+        rta4 = true;
+        break;
+    } 
+}
+
+console.log(rta4);
+
+//Con el metodo SOME
+
+let rta5 = numbers.some(element => element % 2 === 0);
+
+console.log(rta5);
+
+//Con objetos, x ejemplo si quiero saber si al menos alguna orden fue entregada
+
+let rta6 = orders.some(item => item.delivered);
+
+console.log(rta6)
+
+//Recordar que some imprime solo true o false, dada la condicion
