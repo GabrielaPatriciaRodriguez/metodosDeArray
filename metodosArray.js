@@ -171,7 +171,7 @@ console.log(rta);
 
 //Reduce reloaded
 
-const numbers = [1, 2, 4, 6, 1, 3, 3, 1];
+const numbers = [1, 2, 4, 6, 1, 3, 3, 1, 59];
 
 const respuesta = numbers.reduce((acum, item) => {
 if (!acum[item]) {
@@ -255,4 +255,48 @@ let rta6 = orders.some(item => item.delivered);
 
 console.log(rta6)
 
-//Recordar que some imprime solo true o false, dada la condicion
+//Recordar que some imprime solo true o false, dada la condicion.
+
+
+
+//METODO EVERY: TODOS los elementos tienen que cumplir la condicion
+
+//con for
+let rta7 = true;
+for (let index = 0; index < numbers.length; index++) {
+    const element = numbers[index];
+    if (element >= 40) {
+        rta7 = false;
+    }
+}
+
+console.log("Con for", rta7);
+
+//Con el metodo Every
+
+const rta8 = numbers.every(element => element <= 40);
+
+console.log("con Every", rta8);
+
+const team = [
+    {
+        name: "Juliana",
+        age: 8
+    },
+    {
+        name: "Julio",
+        age: 14
+    },
+    {
+        name: "Luis",
+        age: 5
+    },
+    {
+        name: "Lucia",
+        age: 15
+    }
+]
+
+const rta9 = team.every(element => element.age <= 15);
+
+console.log(rta9);
